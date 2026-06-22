@@ -16,21 +16,21 @@ export const clinic = {
   name: 'Sultan Rahman Dental Clinic',
   shortName: 'Sultan Rahman Dental',
   tagline: 'Your Smile Deserves Expert Care in Freetown',
-  phone: '+232 76 000 000',
-  phoneHref: 'tel:+23276000000',
+  phone: '+232 90438286',
+  phoneHref: 'tel:+23290438286',
   emergencyPhone: '+232 76 911 911',
   emergencyHref: 'tel:+23276911911',
   whatsapp: '23276000000',
-  email: 'hello@sultanrahmandental.com',
-  address: '15 Wilkinson Road, Freetown, Sierra Leone',
+  email: 'sultanrahmandentalclinic.com',
+  address: 'Congress Junction, Eastern, Shell Old Road, Freetown, Sierra Leone',
   hours: [
-    { day: 'Monday \u2013 Friday', time: '8:00 AM \u2013 7:00 PM' },
-    { day: 'Saturday', time: '9:00 AM \u2013 4:00 PM' },
+    { day: 'Monday – Friday', time: '9:00 AM – 6:30 PM' },
+    { day: 'Saturday', time: '10:00 AM – 5:00 PM' },
     { day: 'Sunday', time: 'Emergencies only' },
   ],
   branches: ['Wilkinson Road (Main)', 'Lumley Branch', 'Aberdeen Branch'],
-  rating: 4.9,
-  reviewCount: 482,
+  rating: 9.8,
+  reviewCount: 986,
   patientsServed: '12,000+',
 }
 
@@ -374,7 +374,7 @@ export const whyChooseUs = [
 
 export const testimonials = [
   {
-    name: 'Aminata K.',
+    name: 'Mr. John Deen',
     treatment: 'Braces',
     quote:
       'I was nervous about getting braces as an adult, but the team made me feel so comfortable. My smile has completely transformed!',
@@ -388,7 +388,7 @@ export const testimonials = [
     rating: 5,
   },
   {
-    name: 'Fatmata B.',
+    name: 'Mr. David A. Conteh',
     treatment: 'Teeth Whitening',
     quote:
       'Quick, painless, and the results were amazing. Dr. Rahman and his team are true professionals.',
@@ -446,7 +446,7 @@ export const doctor = {
   stats: [
     { value: '15+', label: 'Years experience' },
     { value: '12,000+', label: 'Patients treated' },
-    { value: '4.9\u2605', label: 'Average rating' },
+    { value: '9.8\u2605', label: 'Average rating' },
   ],
 }
 

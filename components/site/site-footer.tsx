@@ -17,7 +17,7 @@ export function SiteFooter() {
               <span className="font-heading text-lg font-semibold">Sultan Rahman</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Freetown&apos;s premier dental clinic, delivering world-class, compassionate
+              Sierra Leone&apos;s premier dental clinic, delivering world-class, compassionate
               care for every smile.
             </p>
           </div>
