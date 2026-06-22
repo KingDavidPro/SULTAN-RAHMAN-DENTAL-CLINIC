@@ -1,16 +1,31 @@
-export default function Home() {
+import { SiteHeader } from '@/components/site/site-header'
+import { SiteFooter } from '@/components/site/site-footer'
+import { Hero } from '@/components/site/hero'
+import { ServicesSection } from '@/components/site/services-section'
+import { SmileGallery } from '@/components/site/smile-gallery'
+import { DoctorSection } from '@/components/site/doctor-section'
+import { WhyChooseUs } from '@/components/site/why-choose-us'
+import { ReviewsSection } from '@/components/site/reviews-section'
+import { FaqSection } from '@/components/site/faq-section'
+import { ContactSection } from '@/components/site/contact-section'
+import { FloatingContact } from '@/components/site/floating-contact'
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-6 py-16 text-center sm:items-start sm:text-left">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-4xl font-bold tracking-tight">
-            Sultan Dental
-          </h1>
-          <p className="max-w-md text-lg text-muted-foreground">
-            To get started, send a prompt or modify this page directly.
-          </p>
-        </div>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <ServicesSection />
+        <SmileGallery />
+        <DoctorSection />
+        <WhyChooseUs />
+        <ReviewsSection />
+        <FaqSection />
+        <ContactSection />
       </main>
-    </div>
-  );
+      <SiteFooter />
+      <FloatingContact />
+    </>
+  )
 }
