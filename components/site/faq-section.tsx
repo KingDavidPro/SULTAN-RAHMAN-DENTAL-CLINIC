@@ -17,7 +17,7 @@ export function FaqSection() {
           description="Everything you need to know before your visit. Still curious? Reach out any time."
         />
 
-        <Accordion openMultiple={false} className="mt-10 w-full">
+        <Accordion multiple={false} className="mt-10 w-full">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`}>
               <AccordionTrigger className="text-left font-heading text-base font-semibold">

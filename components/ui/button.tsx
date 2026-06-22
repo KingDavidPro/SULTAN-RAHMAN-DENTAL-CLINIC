@@ -47,26 +47,29 @@ function Button({
   size = "default",
   asChild = false,
   children,
-  render,
   ...props
 }: ButtonPrimitive.Props &
   VariantProps<typeof buttonVariants> & { asChild?: boolean }) {
-  // Bridge the shadcn/Radix `asChild` API onto base-ui's `render` prop so call
-  // sites that pass `asChild` with a single child element render correctly
-  // instead of producing invalid nested <button> elements.
-  const resolvedRender =
-    render ??
-    (asChild && React.isValidElement(children)
-      ? (children as React.ReactElement)
-      : undefined)
+  const classes = cn(buttonVariants({ variant, size, className }))
+
+  // Support the shadcn/Radix `asChild` API by rendering the single child
+  // element directly (Slot-style) instead of wrapping it in a base-ui button.
+  // This avoids invalid nested-button markup and SSR/client hydration
+  // mismatches caused by base-ui injecting button-specific attributes onto a
+  // non-button child (e.g. an anchor/link).
+  if (asChild && React.isValidElement(children)) {
+    const child = children as React.ReactElement<{ className?: string }>
+    return React.cloneElement(child, {
+      "data-slot": "button",
+      className: cn(classes, child.props.className),
+      ...props,
+    } as React.HTMLAttributes<HTMLElement>)
+  }
 
   return (
-    <ButtonPrimitive
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...(resolvedRender ? { render: resolvedRender } : { children })}
-      {...props}
-    />
+    <ButtonPrimitive data-slot="button" className={classes} {...props}>
+      {children}
+    </ButtonPrimitive>
   )
 }
 
