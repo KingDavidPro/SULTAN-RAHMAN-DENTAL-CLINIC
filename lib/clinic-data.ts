@@ -15,14 +15,15 @@ import {
 export const clinic = {
   name: 'Sultan Rahman Dental Clinic',
   shortName: 'Sultan Rahman Dental',
-  tagline: 'Your Smile Deserves Expert Care in Freetown',
-  phone: '+232 90438286',
+  tagline: 'Where Quality Meets Confidence',
+  phone: '090 438 286',
   phoneHref: 'tel:+23290438286',
-  emergencyPhone: '+232 76 911 911',
-  emergencyHref: 'tel:+23276911911',
-  whatsapp: '23276000000',
-  email: 'sultanrahmandentalclinic.com',
-  address: 'Congress Junction, Eastern, Shell Old Road, Freetown, Sierra Leone',
+  emergencyPhone: '090 438 286',
+  emergencyHref: 'tel:+23290438286',
+  whatsapp: '23290438286',
+  email: 'info@sultanrahmandentalclinic.com',
+  address: 'Congress Junction, Eastern Old Road, Kissy, Freetown, Sierra Leone',
+  mapQuery: 'Congress Junction, Eastern Old Road, Kissy, Freetown, Sierra Leone',
   hours: [
     { day: 'Monday – Friday', time: '9:00 AM – 6:30 PM' },
     { day: 'Saturday', time: '10:00 AM – 5:00 PM' },
@@ -32,12 +33,17 @@ export const clinic = {
   rating: 9.8,
   reviewCount: 986,
   patientsServed: '12,000+',
+  social: {
+    googleBusiness: 'https://share.google/3DxLG53Yggh7bz3S6',
+    facebook: 'https://www.facebook.com/profile.php?id=100082505421510',
+    tiktok: 'https://tiktok.com/@sultanrahmandentalclinic',
+  },
 }
 
 export const whatsappLink = (message?: string) =>
   `https://wa.me/${clinic.whatsapp}?text=${encodeURIComponent(
     message ??
-      'Hello, I would like to book an appointment with Sultan Rahman Dental Clinic.',
+      'Hello, I would like to book an appointment at Sultan Rahman Dental Clinic.',
   )}`
 
 export type Service = {
@@ -374,28 +380,28 @@ export const whyChooseUs = [
 
 export const testimonials = [
   {
-    name: 'Mr. John Deen',
+    name: 'Mariama Kamara',
     treatment: 'Braces',
     quote:
       'I was nervous about getting braces as an adult, but the team made me feel so comfortable. My smile has completely transformed!',
     rating: 5,
   },
   {
-    name: 'Mohamed S.',
+    name: 'Ibrahim Sesay',
     treatment: 'Dental Implant',
     quote:
       'After losing a tooth, I thought my smile was ruined. The implant looks and feels completely natural. Highly recommend.',
     rating: 5,
   },
   {
-    name: 'Mr. David A. Conteh',
+    name: 'Fatmata Koroma',
     treatment: 'Teeth Whitening',
     quote:
       'Quick, painless, and the results were amazing. Dr. Rahman and his team are true professionals.',
     rating: 5,
   },
   {
-    name: 'Ibrahim T.',
+    name: 'Mohamed Bangura',
     treatment: 'Emergency Care',
     quote:
       'I had severe tooth pain on a weekend and they saw me the same day. The relief was immediate. Lifesavers!',

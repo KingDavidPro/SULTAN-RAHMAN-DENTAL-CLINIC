@@ -25,11 +25,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sultan Rahman Dental Clinic | Expert Dental Care in Freetown',
+    default: 'Sultan Rahman Dental Clinic | Where Quality Meets Confidence',
     template: '%s | Sultan Rahman Dental Clinic',
   },
   description:
-    'Freetown\u2019s premier dental clinic. Braces, teeth whitening, implants, general and emergency dentistry. Book your appointment with Dr. Sultan Rahman today.',
+    'Premium dental care, braces, whitening, implants, and emergency dentistry in Kissy, Freetown. Where Quality Meets Confidence \u2014 book your appointment with Dr. Sultan Rahman today.',
   keywords: [
     'dentist Freetown',
     'dental clinic Sierra Leone',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#1f63a8',
+  themeColor: '#0D6EFD',
   width: 'device-width',
   initialScale: 1,
 }

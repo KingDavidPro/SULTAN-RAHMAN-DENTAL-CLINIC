@@ -35,12 +35,12 @@ export function Hero() {
           </span>
 
           <h1 className="mt-6 font-heading text-4xl font-medium leading-[1.04] tracking-tight text-background text-balance sm:text-5xl lg:text-[4rem]">
-            Your smile deserves{' '}
-            <em className="font-normal italic text-background">expert care</em> in Freetown
+            Transform Your Smile With{' '}
+            <em className="font-normal italic text-background">Confidence</em>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/85">
-            Braces &bull; Whitening &bull; Implants &bull; General Dentistry &bull; Emergency Care
+            Premium dental care, braces, whitening, implants, and emergency dentistry in Freetown.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

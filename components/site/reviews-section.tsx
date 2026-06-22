@@ -56,6 +56,14 @@ export function ReviewsSection() {
             <p className="text-sm text-muted-foreground">
               Based on <span className="font-semibold text-foreground">{clinic.reviewCount} Google reviews</span>
             </p>
+            <a
+              href={clinic.social.googleBusiness}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex text-sm font-medium text-primary transition-colors hover:text-primary/80"
+            >
+              Read our Google reviews
+            </a>
           </div>
         </div>
 
@@ -70,7 +78,7 @@ export function ReviewsSection() {
                 {t.quote}
               </blockquote>
               <figcaption className="mt-5 flex items-center gap-3 border-t border-border pt-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent font-heading text-sm font-bold text-accent-foreground">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold font-heading text-sm font-bold text-gold-foreground">
                   {initials(t.name)}
                 </span>
                 <div>
