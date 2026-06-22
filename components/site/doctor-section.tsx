@@ -20,7 +20,7 @@ export function DoctorSection() {
             <div className="absolute -bottom-6 left-1/2 flex -translate-x-1/2 gap-3 rounded-2xl border border-border bg-card p-4 shadow-lg sm:left-6 sm:translate-x-0">
               {doctor.stats.map((stat) => (
                 <div key={stat.label} className="px-3 text-center">
-                  <div className="font-heading text-xl font-extrabold text-primary">
+                  <div className="font-heading text-xl font-semibold text-primary">
                     {stat.value}
                   </div>
                   <div className="text-xs text-muted-foreground">{stat.label}</div>
@@ -30,10 +30,11 @@ export function DoctorSection() {
           </div>
 
           <div className="mt-6 lg:mt-0">
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+              <span className="h-px w-6 bg-primary/40" aria-hidden="true" />
               Meet Your Dentist
             </span>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl">
+            <h2 className="mt-3 font-heading text-3xl font-medium leading-[1.1] tracking-tight text-balance sm:text-4xl">
               {doctor.name}
             </h2>
             <p className="mt-1 text-base font-medium text-muted-foreground">{doctor.title}</p>

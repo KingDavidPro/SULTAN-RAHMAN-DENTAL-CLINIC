@@ -46,7 +46,7 @@ export function ReviewsSection() {
               <path fill="#EA4335" d="M12 5.5c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 0 0 2.3 7.4L6 10.2C6.9 7.7 9.2 5.5 12 5.5z" />
             </svg>
             <div>
-              <div className="font-heading text-2xl font-extrabold leading-none">
+              <div className="font-heading text-2xl font-semibold leading-none">
                 {clinic.rating}
               </div>
               <Stars count={5} />

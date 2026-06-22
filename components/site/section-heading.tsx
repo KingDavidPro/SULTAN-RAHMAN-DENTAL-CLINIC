@@ -22,11 +22,20 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <span className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+        <span
+          className={cn(
+            'inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary',
+            align === 'center' && 'justify-center',
+          )}
+        >
+          <span className="h-px w-6 bg-primary/40" aria-hidden="true" />
           {eyebrow}
+          {align === 'center' ? (
+            <span className="h-px w-6 bg-primary/40" aria-hidden="true" />
+          ) : null}
         </span>
       ) : null}
-      <h2 className="font-heading text-3xl font-extrabold tracking-tight text-foreground text-balance sm:text-4xl">
+      <h2 className="font-heading text-3xl font-medium leading-[1.1] tracking-tight text-foreground text-balance sm:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
       {description ? (

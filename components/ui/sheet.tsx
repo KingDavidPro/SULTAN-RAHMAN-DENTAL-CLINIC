@@ -11,12 +11,49 @@ function Sheet({ ...props }: SheetPrimitive.Root.Props) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }
 
-function SheetTrigger({ ...props }: SheetPrimitive.Trigger.Props) {
-  return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
+function asChildRender(
+  asChild: boolean | undefined,
+  render: React.ReactElement | undefined,
+  children: React.ReactNode,
+) {
+  return (
+    render ??
+    (asChild && React.isValidElement(children)
+      ? (children as React.ReactElement)
+      : undefined)
+  )
 }
 
-function SheetClose({ ...props }: SheetPrimitive.Close.Props) {
-  return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
+function SheetTrigger({
+  asChild,
+  render,
+  children,
+  ...props
+}: SheetPrimitive.Trigger.Props & { asChild?: boolean }) {
+  const resolved = asChildRender(asChild, render as React.ReactElement, children)
+  return (
+    <SheetPrimitive.Trigger
+      data-slot="sheet-trigger"
+      {...(resolved ? { render: resolved } : { children })}
+      {...props}
+    />
+  )
+}
+
+function SheetClose({
+  asChild,
+  render,
+  children,
+  ...props
+}: SheetPrimitive.Close.Props & { asChild?: boolean }) {
+  const resolved = asChildRender(asChild, render as React.ReactElement, children)
+  return (
+    <SheetPrimitive.Close
+      data-slot="sheet-close"
+      {...(resolved ? { render: resolved } : { children })}
+      {...props}
+    />
+  )
 }
 
 function SheetPortal({ ...props }: SheetPrimitive.Portal.Props) {

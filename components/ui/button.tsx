@@ -1,3 +1,4 @@
+import * as React from "react"
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -44,12 +45,26 @@ function Button({
   className,
   variant = "default",
   size = "default",
+  asChild = false,
+  children,
+  render,
   ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+}: ButtonPrimitive.Props &
+  VariantProps<typeof buttonVariants> & { asChild?: boolean }) {
+  // Bridge the shadcn/Radix `asChild` API onto base-ui's `render` prop so call
+  // sites that pass `asChild` with a single child element render correctly
+  // instead of producing invalid nested <button> elements.
+  const resolvedRender =
+    render ??
+    (asChild && React.isValidElement(children)
+      ? (children as React.ReactElement)
+      : undefined)
+
   return (
     <ButtonPrimitive
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      {...(resolvedRender ? { render: resolvedRender } : { children })}
       {...props}
     />
   )

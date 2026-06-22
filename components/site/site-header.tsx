@@ -34,7 +34,7 @@ function Logo() {
         </svg>
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-heading text-base font-extrabold tracking-tight text-foreground">
+        <span className="font-heading text-lg font-semibold tracking-tight text-foreground">
           Sultan Rahman
         </span>
         <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">

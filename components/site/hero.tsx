@@ -23,7 +23,7 @@ export function Hero() {
         className="object-cover"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/55 to-foreground/10"
+        className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/60 to-foreground/15"
         aria-hidden="true"
       />
 
@@ -34,11 +34,12 @@ export function Hero() {
             Now accepting new patients in Freetown
           </span>
 
-          <h1 className="mt-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-background text-balance sm:text-5xl lg:text-6xl">
-            Your Smile Deserves Expert Care in Freetown
+          <h1 className="mt-6 font-heading text-4xl font-medium leading-[1.04] tracking-tight text-background text-balance sm:text-5xl lg:text-[4rem]">
+            Your smile deserves{' '}
+            <em className="font-normal italic text-background">expert care</em> in Freetown
           </h1>
 
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-background/85">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/85">
             Braces &bull; Whitening &bull; Implants &bull; General Dentistry &bull; Emergency Care
           </p>
 

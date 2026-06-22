@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, Fraunces, Geist_Mono } from 'next/font/google'
 import { ChatWidget } from '@/components/site/chat-widget'
 import './globals.css'
 
@@ -10,10 +10,11 @@ const jakarta = Plus_Jakarta_Sans({
   display: 'swap',
 })
 
-const jakartaHeading = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   variable: '--font-heading',
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 })
 
@@ -63,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${jakartaHeading.variable} ${geistMono.variable} bg-background`}
+      className={`${jakarta.variable} ${fraunces.variable} ${geistMono.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         {children}
