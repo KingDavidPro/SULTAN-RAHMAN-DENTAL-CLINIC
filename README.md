@@ -1,4 +1,5 @@
-# dental-clinic-platform
+# Sultan Rahman Dental Clinic
+Official website for Sultan Rahman Dental Clinic, featuring dental services, appointment scheduling, patient education, and a modern user experience focused on promoting healthy and confident smiles in Sie
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
 
