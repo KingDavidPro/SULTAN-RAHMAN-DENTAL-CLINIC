@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, CalendarCheck, Users, LogOut, Stethoscope } from "lucide-react"
+import { LayoutDashboard, CalendarCheck, Users, LogOut, Stethoscope, Database } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { signOut } from "@/app/dashboard/actions"
 
@@ -10,6 +10,7 @@ const links = [
   { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
   { href: "/dashboard/bookings", label: "Bookings", icon: CalendarCheck },
   { href: "/dashboard/patients", label: "Patients", icon: Users },
+  { href: "/dashboard/diagnostics", label: "Diagnostics", icon: Database },
 ]
 
 export function DashboardSidebar({ email }: { email: string }) {
