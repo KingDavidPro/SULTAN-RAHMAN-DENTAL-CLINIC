@@ -6,14 +6,19 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { Loader2, Lock } from "lucide-react"
+import { useState, useTransition } from "react"
+import { Loader2, Lock, ShieldCheck, Terminal } from "lucide-react"
+import { devSuperAdminLogin } from "@/app/auth/actions"
+import { SUPER_ADMIN } from "@/lib/auth/super-admin"
+
+const IS_DEV = process.env.NODE_ENV !== "production"
 
 export default function StaffLoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [isDevPending, startDevLogin] = useTransition()
   const router = useRouter()
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -32,6 +37,14 @@ export default function StaffLoginPage() {
     } finally {
       setIsLoading(false)
     }
+  }
+
+  const handleDevLogin = () => {
+    setError(null)
+    startDevLogin(async () => {
+      const result = await devSuperAdminLogin()
+      if (result?.error) setError(result.error)
+    })
   }
 
   return (
@@ -63,7 +76,12 @@ export default function StaffLoginPage() {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
+            <div className="flex items-center justify-between">
+              <Label htmlFor="password">Password</Label>
+              <Link href="/auth/reset" className="text-xs text-primary hover:underline">
+                Forgot password?
+              </Link>
+            </div>
             <Input
               id="password"
               type="password"
@@ -83,6 +101,47 @@ export default function StaffLoginPage() {
             Back to website
           </Link>
         </form>
+
+        {IS_DEV && (
+          <div className="mt-6 flex flex-col gap-4 rounded-3xl border border-dashed border-primary/40 bg-primary/5 p-5">
+            <div className="flex items-center gap-2 text-primary">
+              <Terminal className="h-4 w-4" />
+              <p className="text-xs font-bold uppercase tracking-wide">Development Only</p>
+            </div>
+
+            <Button
+              type="button"
+              variant="secondary"
+              className="w-full gap-2"
+              onClick={handleDevLogin}
+              disabled={isDevPending}
+            >
+              {isDevPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShieldCheck className="h-4 w-4" />}
+              {isDevPending ? "Signing in..." : "Enter Admin Dashboard (Development)"}
+            </Button>
+
+            <dl className="grid gap-1 text-xs text-foreground/80">
+              <div className="flex justify-between gap-2">
+                <dt className="text-muted-foreground">Name</dt>
+                <dd className="font-medium">{SUPER_ADMIN.name}</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="text-muted-foreground">Email</dt>
+                <dd className="font-medium break-all">{SUPER_ADMIN.email}</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="text-muted-foreground">Role</dt>
+                <dd className="font-medium">Super Admin</dd>
+              </div>
+            </dl>
+
+            <p className="text-[11px] leading-relaxed text-muted-foreground">
+              Development use only. Set or reset the password through Supabase Auth
+              {" "}(Authentication &rarr; Users), or use &ldquo;Forgot password?&rdquo; above. This panel and the
+              shortcut never appear in production.
+            </p>
+          </div>
+        )}
       </div>
     </main>
   )
